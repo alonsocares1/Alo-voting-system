@@ -1,33 +1,15 @@
-require("@nomiclabs/hardhat-waffle");
-require('dotenv').config()
+require("@nomicfoundation/hardhat-toolbox");
 
+/** @type import('hardhat/config').HardhatUserConfig */
 module.exports = {
-  defaultNetwork: "localhost",
+  solidity: "0.8.17",
   networks: {
-    hardhat: {
+    localhost: {},
+    mumbai: {
+      url: "https://polygon-mumbai.g.alchemy.com/v2/HvLI-Z4SfgUGAq2d5yt2kgVw4ZvYbAdC",
+      accounts: [
+        `0x${"c361e53c4dc82e1e9301379daaa8111ae27bc8154473b552cc44247d77a69bf1"}`,
+      ],
     },
-    localhost: {
-      url: "http://127.0.0.1:8545"
-    },
-    goerli: {
-      url: process.env.ENDPOINT_URL,
-      accounts: [process.env.DEPLOYER_KEY]
-    }
   },
-  solidity: {
-    version: '0.8.11',
-    settings: {
-      optimizer: {
-        enabled: true,
-        runs: 200
-      }
-    }
-  },
-  paths: {
-    sources: "./src/contracts",
-    artifacts: "./src/abis"
-  },
-  mocha: {
-    timeout: 40000
-  }
-}
+};
