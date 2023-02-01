@@ -1,15 +1,2 @@
-////////////////////////////////////////
-
-//////////////////////////////
-const axisoData = async (url) => {
-try {
-const {
-data: { name, address, image, number, age },
-} = await axios.get(url);
-
-      console.log(url);
-    } catch (error) {
-      console.log("Someting wrong", error);
-    }
-
-};
+  Alo-voting-system
+  https://alo-voting-system.vercel.app
